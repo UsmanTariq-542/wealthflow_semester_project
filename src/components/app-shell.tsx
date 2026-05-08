@@ -50,37 +50,9 @@ export function AppShell({ children }: { children?: ReactNode }) {
 
   return (
     <div className="min-h-screen bg-muted/30">
-      {/* Sidebar (desktop) */}
-      <aside className="hidden md:flex fixed inset-y-0 left-0 w-64 bg-sidebar border-r border-sidebar-border flex-col">
-        <div className="p-6">
-          <Link to="/dashboard" className="flex items-center gap-2">
-            <div className="size-9 rounded-xl gradient-brand flex items-center justify-center"><Wallet className="size-5 text-white" /></div>
-            <span className="font-bold text-lg">WealthFlow</span>
-          </Link>
-        </div>
-        <nav className="px-3 flex-1 space-y-1">
-          {NAV.map((n) => {
-            const active = location.pathname.startsWith(n.to);
-            return (
-              <Link key={n.to} to={n.to}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
-                  active ? "bg-sidebar-accent text-sidebar-accent-foreground" : "text-sidebar-foreground hover:bg-sidebar-accent/50"
-                }`}>
-                <n.icon className="size-4" />{n.label}
-              </Link>
-            );
-          })}
-        </nav>
-        <div className="p-3">
-          <Button onClick={() => setOpenTx(true)} className="w-full" size="lg">
-            <Plus className="size-4" /> Add Transaction
-          </Button>
-        </div>
-      </aside>
-
-      {/* Topbar */}
-      <header className="md:pl-64 sticky top-0 z-30 bg-background/80 backdrop-blur border-b">
-        <div className="flex items-center justify-between px-4 md:px-8 h-16">
+      {/* Topbar — full width, true top-left brand */}
+      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur border-b w-full">
+        <div className="w-full px-4 flex justify-between items-center h-16 gap-2">
           <div className="flex items-center gap-2 md:hidden">
             <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
               <SheetTrigger asChild>
@@ -105,7 +77,7 @@ export function AppShell({ children }: { children?: ReactNode }) {
             </Sheet>
           </div>
 
-          <Link to="/dashboard" className="flex items-center gap-2 group">
+          <Link to="/dashboard" className="flex items-center gap-2 group mr-auto">
             <div className="size-8 rounded-xl gradient-brand flex items-center justify-center shadow-elegant transition-transform group-hover:scale-105">
               <Wallet className="size-4 text-white" />
             </div>
@@ -113,8 +85,6 @@ export function AppShell({ children }: { children?: ReactNode }) {
               WealthFlow
             </span>
           </Link>
-
-          <div className="flex-1" />
 
           <div className="flex items-center gap-2">
             <NotificationsBell />
@@ -139,6 +109,28 @@ export function AppShell({ children }: { children?: ReactNode }) {
           </div>
         </div>
       </header>
+
+      {/* Sidebar (desktop) — sits below header */}
+      <aside className="hidden md:flex fixed top-16 bottom-0 left-0 w-64 bg-sidebar border-r border-sidebar-border flex-col z-20">
+        <nav className="px-3 pt-6 flex-1 space-y-1">
+          {NAV.map((n) => {
+            const active = location.pathname.startsWith(n.to);
+            return (
+              <Link key={n.to} to={n.to}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
+                  active ? "bg-sidebar-accent text-sidebar-accent-foreground" : "text-sidebar-foreground hover:bg-sidebar-accent/50"
+                }`}>
+                <n.icon className="size-4" />{n.label}
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="p-3">
+          <Button onClick={() => setOpenTx(true)} className="w-full" size="lg">
+            <Plus className="size-4" /> Add Transaction
+          </Button>
+        </div>
+      </aside>
 
       <main className="md:pl-64 pb-24 md:pb-8">
         <div className="px-4 md:px-8 py-6 max-w-7xl mx-auto">{children ?? <Outlet />}</div>
