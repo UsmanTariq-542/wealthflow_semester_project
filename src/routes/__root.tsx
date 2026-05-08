@@ -77,11 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "WealthFlow — Smart Expense Tracker & Budget Planner" },
       { name: "description", content: "Track expenses, manage budgets, and unlock AI-powered financial insights with WealthFlow." },
       { name: "author", content: "WealthFlow" },
-      { property: "og:title", content: "WealthFlow — Smart Expense Tracker" },
-      { property: "og:description", content: "Confident clarity for your financial future." },
+      { property: "og:title", content: "WealthFlow — Smart Expense Tracker & Budget Planner" },
+      { property: "og:description", content: "Track expenses, manage budgets, and unlock AI-powered financial insights with WealthFlow." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "WealthFlow — Smart Expense Tracker & Budget Planner" },
+      { name: "twitter:description", content: "Track expenses, manage budgets, and unlock AI-powered financial insights with WealthFlow." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0e9a3e8f-0c9a-4f83-8583-869249fb43ee" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0e9a3e8f-0c9a-4f83-8583-869249fb43ee" },
     ],
     links: [
       {
