@@ -84,7 +84,7 @@ export function AppShell({ children }: { children?: ReactNode }) {
           <div className="flex items-center gap-2 md:hidden">
             <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon"><Menu className="size-5" /></Button>
+                <Button variant="ghost" size="icon" aria-label="Open menu"><Menu className="size-5" /></Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-72 p-0">
                 <SheetHeader className="p-6 border-b">
@@ -103,9 +103,16 @@ export function AppShell({ children }: { children?: ReactNode }) {
                 </nav>
               </SheetContent>
             </Sheet>
-            <div className="size-8 rounded-xl gradient-brand flex items-center justify-center"><Wallet className="size-4 text-white" /></div>
-            <span className="font-bold">WealthFlow</span>
           </div>
+
+          <Link to="/dashboard" className="flex items-center gap-2 group">
+            <div className="size-8 rounded-xl gradient-brand flex items-center justify-center shadow-elegant transition-transform group-hover:scale-105">
+              <Wallet className="size-4 text-white" />
+            </div>
+            <span className="font-bold text-lg bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              WealthFlow
+            </span>
+          </Link>
 
           <div className="flex-1" />
 
