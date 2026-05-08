@@ -32,7 +32,7 @@ A modern, AI-powered personal finance web application that helps users track exp
 
 ## 🌐 Live Demo
 
-🔗 **Live URL:** `YOUR_DEPLOYMENT_URL`
+🔗 **Live URL:** `https://usebudgetbuddy.lovable.app`
 
 ---
 
@@ -56,7 +56,7 @@ A modern, AI-powered personal finance web application that helps users track exp
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/wealthflow.git
+git clone https://github.com/UsmanTariq-542/wealthflow_semester_project.git
 cd wealthflow
 ```
 
@@ -171,15 +171,6 @@ LOVABLE_API_KEY=YOUR_LOVABLE_AI_KEY
 2. Import the project in [Vercel](https://vercel.com).
 3. Add the environment variables in **Project Settings → Environment Variables**.
 4. Deploy — Vercel will auto-detect the build command (`npm run build`).
-
----
-
-## 👥 Team Members
-
-- **TEAM_MEMBER_1_NAME** — TEAM_MEMBER_1_ROLE
-- **TEAM_MEMBER_2_NAME** — TEAM_MEMBER_2_ROLE
-- **TEAM_MEMBER_3_NAME** — TEAM_MEMBER_3_ROLE
-- **TEAM_MEMBER_4_NAME** — TEAM_MEMBER_4_ROLE
 
 ---
 
