@@ -32,7 +32,7 @@ A modern, AI-powered personal finance web application that helps users track exp
 
 ## 🌐 Live Demo
 
-🔗 **Live URL:** `https://usebudgetbuddy.lovable.app`
+🔗 **Live URL:** https://usebudgetbuddy.lovable.app
 
 ---
 
