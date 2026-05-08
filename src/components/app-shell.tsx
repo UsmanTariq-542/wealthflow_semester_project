@@ -132,68 +132,6 @@ export function AppShell({ children }: { children?: ReactNode }) {
         </div>
       </aside>
 
-      {/* Topbar */}
-      <header className="md:pl-64 sticky top-0 z-30 bg-background/80 backdrop-blur border-b">
-        <div className="flex items-center justify-between px-4 md:px-8 h-16">
-          <div className="flex items-center gap-2 md:hidden">
-            <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" aria-label="Open menu"><Menu className="size-5" /></Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-72 p-0">
-                <SheetHeader className="p-6 border-b">
-                  <SheetTitle className="flex items-center gap-2">
-                    <div className="size-8 rounded-xl gradient-brand flex items-center justify-center"><Wallet className="size-4 text-white" /></div>
-                    WealthFlow
-                  </SheetTitle>
-                </SheetHeader>
-                <nav className="p-3 space-y-1">
-                  {NAV.map((n) => (
-                    <Link key={n.to} to={n.to} onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-accent">
-                      <n.icon className="size-4" />{n.label}
-                    </Link>
-                  ))}
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
-
-          <Link to="/dashboard" className="flex items-center gap-2 group">
-            <div className="size-8 rounded-xl gradient-brand flex items-center justify-center shadow-elegant transition-transform group-hover:scale-105">
-              <Wallet className="size-4 text-white" />
-            </div>
-            <span className="font-bold text-lg bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-              WealthFlow
-            </span>
-          </Link>
-
-          <div className="flex-1" />
-
-          <div className="flex items-center gap-2">
-            <NotificationsBell />
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-2 rounded-full hover:bg-accent p-1 pr-3">
-                  <div className="size-8 rounded-full gradient-brand text-white flex items-center justify-center font-semibold text-sm">
-                    {initial}
-                  </div>
-                  <span className="hidden sm:inline text-sm font-medium">{displayName}</span>
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel>{displayName}</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild><Link to="/profile"><UserIcon className="size-4" /> Profile</Link></DropdownMenuItem>
-                <DropdownMenuItem onClick={async () => { await signOut(); navigate({ to: "/login" }); }}>
-                  <LogOut className="size-4" /> Log out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </div>
-      </header>
-
       <main className="md:pl-64 pb-24 md:pb-8">
         <div className="px-4 md:px-8 py-6 max-w-7xl mx-auto">{children ?? <Outlet />}</div>
       </main>
