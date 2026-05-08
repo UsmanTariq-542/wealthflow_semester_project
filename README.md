@@ -26,7 +26,7 @@ A modern, AI-powered personal finance web application that helps users track exp
 - **Backend:** Supabase (Postgres, Auth, Edge Functions, Row Level Security)
 - **AI:** Lovable AI Gateway (Google Gemini)
 - **Build Tool:** Vite 7
-- **Deployment:** Lovable / Vercel / Cloudflare Workers
+- **Deployment:** Lovable
 
 ---
 
