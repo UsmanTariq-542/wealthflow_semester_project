@@ -36,18 +36,6 @@ A modern, AI-powered personal finance web application that helps users track exp
 
 ---
 
-## 📸 Screenshots
-
-| Dashboard | Expenses | Budgets |
-|-----------|----------|---------|
-| ![Dashboard](./screenshots/dashboard.png) | ![Expenses](./screenshots/expenses.png) | ![Budgets](./screenshots/budgets.png) |
-
-| Analytics | AI Insights | Mobile View |
-|-----------|-------------|-------------|
-| ![Analytics](./screenshots/analytics.png) | ![AI Insights](./screenshots/ai-insights.png) | ![Mobile](./screenshots/mobile.png) |
-
----
-
 ## ⚙️ Installation & Setup
 
 ### Prerequisites
